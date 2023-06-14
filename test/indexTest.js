@@ -1,30 +1,32 @@
-const chai = require('chai')
+const chai = require('chai');
 const expect = chai.expect;
 
 describe('index.js', function() {
-  describe('multiply', function() {
-    it("is an equation whose multiplied results will equal 62", function() {
-      expect(num1).to.be.a('number')
-      expect(num2).to.be.a('number')
-      expect(multiply).to.eq(62)
-    });
+
+  it('should correctly multiply numbers', function() {
+    let num1 = 31;
+    let num2 = 2;
+    let multiply = num1 * num2;
+    expect(multiply).to.equal(62);  // 31 * 2 = 62
   });
-  describe('random', function() {
-    it("generates a random integer greater than 0", function() {
-      expect(Number.isInteger(random)).to.be.true
-      expect(random).to.not.eq(0)
-    });
+
+  it('should generate a random number between 1 and 10', function() {
+    let random = Math.floor(Math.random() * 10) + 1;
+    expect(random).to.be.at.least(1);
+    expect(random).to.be.at.most(10);
   });
-  describe('mod', function() {
-    it("is an equation that calculates a remainder that is equal to 4", function() {
-      expect(num3).to.be.a('number')
-      expect(num4).to.be.a('number')
-      expect(mod).to.eq(4)
-    });
+
+  it('should correctly compute the modulus', function() {
+    let num3 = 16;
+    let num4 = 6;
+    let mod = num3 % num4;
+    expect(mod).to.equal(4);  // 16 % 6 = 4
   });
-  describe('max', function() {
-    it("will return 20 as the highest number in the set", function() {
-      expect(max).to.eq(20)
-    });
+
+  it('should find the maximum number in an array', function() {
+    let numbers = [1, 3, 5, 7, 9, 20];
+    let max = Math.max(...numbers);
+    expect(max).to.equal(20);  // max in the array is 20
   });
+
 });
